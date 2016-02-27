@@ -1,0 +1,197 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:nil arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t
+#+OPTIONS: num:nil p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:nil todo:t |:t
+#+TITLE: George Jones Projects Metaproject
+#+DATE: <2016-02-27 06:37:12 Saturday>
+#+AUTHOR: George M Jones
+#+EMAIL: gmj@pobox.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 25.1.50.1 (Org mode 8.3.3)
+
+This is the grand scheme of my project to re-organize ALL my projects
+using org mode/agenda, and git.
+
+* Goals
+** Simplify the organization of my .org project files
+   Lector caveat !
+** Simplify the management of my .org project files
+   - e.g. fewer git repos
+   - This will allow me to, for instance, to install my environment
+     (emacs/org) on a new machine, pull down a few git repos and go.
+** Define an organization that works in multiple contexts (home, work..)
+   - e.g. I want to be able to use this for different =~/.ssh=
+     directories both at home and at work
+** Restrict/Allow access as appropritate
+   - e.g. "money" and "career" projects might have different
+     visibility than, say, my emacs config project
+** Archive Old material
+** Enable migration of my projects
+   - To different machines (cloud)
+   - To re-installed local hardware
+    + e.g. I want to get to the point that everything that matters is
+      in git somewhere so the local machine can die, be re-installed
+      or go way and it will not impact my work (at least in terms of
+      .orgifiled projects.
+** Don't treat people like projects
+* Methods
+** Create one top-level dir per context (home, work...)
+   e.g.
+
+   #+begin_example
+   ~/home/
+   ~/work/
+   #+end_example
+
+** Create one git-repo per scope (level of visibility) per context
+   e.g.
+
+   #+begin_example
+   ~/home/public
+   ~/home/limited
+   ~/home/private 
+
+   ~/work/public
+   ~/work/limited
+   ~/work/private 
+   #+end_example
+
+   Note, the =~/../public= repos might be the same across context
+   (e.g. my default dotfiles), but the others are likely to be
+   different, so disambiguation, selection or merging will be
+   necessary (e.g. switching between different =~/.ssh/= directories
+
+   Also note that use of =~/home= might be confusing
+   (/home/george/home/...) but I thing the idea of using =~/home= and
+   =~/work= is more clear than something like =~/george= and
+   =~/work=.
+   
+** Define rules for visibility of each scope
+*** Public scope
+    - Things that can be completely public, like most of my .emacs.d
+    - This might include, e.g., my .emacs.d/ files or HOWTOs on home remodeling.
+    - These are things intended to be potentially consumed by other people.
+    - It may make sense to have multiple repos here (e.g. one for
+      .emacs.d, another for home remodeling, another for forked open
+      source projects)
+*** Limited scope
+    - Things that do not NEED to be private, but make no sense to
+      publish widely, e.g. configuration settings specific to my
+      email, e.g. my uesrname, email server names and ports, etc.
+*** Private scope
+    - Things that NEED to be private.  Secrets.  Keys. Etc
+    - This would probably include things specific to people, family
+      members, etc.
+*** Others
+    - In different contexts (e.g. work) there may be other scopes
+      (myGroup, myDevTeam, etc.)
+** Create one directory for each project, create git repos
+   For each project:
+
+   - create a directory within the appropriate context and scope
+   - choose an appropriate git repo
+
+     | Directory                    | repo            |
+     |------------------------------+-----------------|
+     | ~/home/public/.emacs.d       | github          |
+     | ~/home/public/dotfiles       | github          |
+     | ~/home/limited/configs       | PERSONAL-SERVER |
+     | ~/home/limited/.gitconfig    | PERSONAL-SERVER |
+     | ~/home/private/.ssh          | codecommit      |
+     | ~/home/private/secrets       | codecommit      |
+     | ~/home/private/money         | codecommit      |
+     | ~/home/private/career        | codecommit      |
+     | ~/home/private/family/thing1 | codecommit      |
+     | ~/home/private/family/thing2 | codecommit      |
+
+** Create a project-PROJECTNAME.org for each project
+   This may or may not be in top level directory, e.g.
+
+   #+begin_example
+   ~/home/public/elisp/project-elisp.org
+   ~/home/private/family/thing1/person-thing1.org # not project-thing1.org !!!
+   #+end_example
+
+** Add the {person,project}-PROJECTNAME.org to org-agenda-files
+   #+begin_example
+   C-c [ runs the command org-agenda-file-to-front (found in
+   org-mode-map), which is an interactive Lisp closure in ‘org.el’.
+   
+   It is bound to C-c [, <menu-bar> <Org> <File List for Agenda>
+   <Add/Move Current File to Front of List>.
+   
+   (org-agenda-file-to-front &optional TO-END)
+   #+end_example
+
+*** Keeping org-agenda-files out of ~/.emacs/init.el
+      I want to keep private information out of init.el.
+      org-agenda-file-to-front adds files there.  I want them in a
+      separate file.
+
+      I added this to init.el
+      #+begin_example
+      ; because junk I don't want to share in git keeps showing up here
+      (setq custom-file "~/home/limited/.emacs.d/emacs-custom.el")
+      (load custom-file)
+
+      #+end_example
+
+** Create symlinks for special cases
+
+   In the normal case, just use files with their paths as installed, e.g.,
+
+   #+begin_example
+   ~/home/private/family/thing1/person-thing1.org
+   #+end_example
+
+   Create symlinks where needed
+
+** TODO Think about how to handle symlinks and conflicts
+
+   In the normal case:
+
+   #+begin_example
+  ~/.bashrc -> ~/home/private/.bashrc
+  ~/.emacs.d -> ~/home/private/.emacs.d
+   #+end_example
+
+   And so forth.
+
+   What about cases where I want to switch between
+   configs/credentials, 
+
+   #+begin_example
+  ~/.ssh -> ~/home/private/.ssh
+   #+end_example
+
+   or mix?  Options would seem to be to switch out the symlinks or
+   find some way to merge the contents (.e.g. add personal hosts to
+   ~/work/private/.ssh/config) and maintain it that way, or find some
+   way to do automatic merging or conditional #INCLUDEs
+
+   This is really starting to violate the simplicity goal....
+   
+*** Special cases
+
+   #+begin_example
+   lrwxrwxrwx 1 ubuntu ubuntu        28 Feb  3 10:29 configs -> /home/ubuntu/limited/configs/
+   lrwxrwxrwx 1 ubuntu ubuntu        40 Jan 30 10:36 elisp -> /home/ubuntu/public/elisp/
+   lrwxrwxrwx 1 ubuntu ubuntu        40 Jan 30 10:36 private-projects -> /home/ubuntu/public/private/projects/
+   lrwxrwxrwx 1 ubuntu ubuntu        27 Feb  7 09:29 family -> /home/ubuntu/private/family/
+   #+end_example
+
+* Side Effects
+** Enables time tracking on projects  
+* Execution
+* What this does not address
+  - Archival of non-project related material such as photos, videos
+    and music.
+  - Archival of old word processing docs, spreadsheets, etc.
+
+* Action Items
+** TODO Think about renaming THIS file and categorizing it in the new system
+** TODO Check this meta-project into github
+** TODO Start re-organizing all my projects/git repos along these lines
