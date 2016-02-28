@@ -6,6 +6,32 @@
    [[file:README.org]]
 ** IN-PROGRESS Check this meta-project into github
 ** TODO Start re-organizing all my projects/git repos along these lines
+** IN-PROGRESS Migrate ~/projects and ~/git projects to new format as I touch files
+   :LOGBOOK:
+   CLOCK: [2016-02-27 Sat 06:15]--[2016-02-27 Sat 06:15] =>  0:00
+   :END:
+   [2016-02-27 Sat 06:15]
+   [[file:~/projects][file:~/projects]]
+** TODO select git repos
+   :LOGBOOK:
+   CLOCK: [2016-02-27 Sat 06:16]--[2016-02-27 Sat 06:16] =>  0:00
+   :END:
+   [2016-02-27 Sat 06:16]
+   [[file:~/projects][file:~/projects]]
+** TODO start syncing incrementally to new git repos
+   :LOGBOOK:
+   CLOCK: [2016-02-27 Sat 07:17]--[2016-02-27 Sat 07:17] =>  0:00
+   :END:
+   [2016-02-27 Sat 07:17]
+   [[file:~/home/private/.ssh/install.sh][file:~/home/private/.ssh/install.sh]]
+** TODO sync everything with my org dashboard
+   :LOGBOOK:
+   CLOCK: [2016-02-27 Sat 06:16]--[2016-02-27 Sat 06:16] =>  0:00
+   :END:
+   [2016-02-27 Sat 06:16]
+   [[file:~/projects][file:~/projects]]
+** TODO figure out what to to do with ~/secrets and ~/configs
+
 * Backlog - Metaproject
 * Meetings - Metaproject
 * Info - Metaproject
