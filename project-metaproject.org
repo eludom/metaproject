@@ -1,1 +1,11 @@
-README.org
+* Action Items - Metaproject
+** DONE Rename THIS file and categorize it in the new system
+   SCHEDULED: <2016-02-27 Sat>
+** DONE Write up project description
+   [2016-02-28 Sun]
+   [[file:README.org]]
+** IN-PROGRESS Check this meta-project into github
+** TODO Start re-organizing all my projects/git repos along these lines
+* Backlog - Metaproject
+* Meetings - Metaproject
+* Info - Metaproject

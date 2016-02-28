@@ -4,7 +4,7 @@
 #+OPTIONS: num:nil p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
 #+OPTIONS: timestamp:t title:t toc:nil todo:t |:t
 #+TITLE: George Jones Projects Metaproject
-#+DATE: <2016-02-27 06:37:12 Saturday>
+#+DATE: <2016-02-28 09:14:31 Sunday>
 #+AUTHOR: George M Jones
 #+EMAIL: gmj@pobox.com
 #+LANGUAGE: en
@@ -15,7 +15,7 @@
 This is the grand scheme of my project to re-organize ALL my projects
 using org mode/agenda, and git.
 
-* Goals
+* Goals (Why)
 ** Simplify the organization of my .org project files
    Lector caveat !
 ** Simplify the management of my .org project files
@@ -37,7 +37,13 @@ using org mode/agenda, and git.
       or go way and it will not impact my work (at least in terms of
       .orgifiled projects.
 ** Don't treat people like projects
-* Methods
+* Non-Goals (out of scope)
+** Archival of non-project related material
+   e.g. photos, videos and music.
+** Archival of documents not associated with projects
+   e.g. random old word processing docs, spreadsheets, etc. that have
+   not been associated with a project in this system.
+* Methods (How)
 ** Create one top-level dir per context (home, work...)
    e.g.
 
@@ -183,15 +189,10 @@ using org mode/agenda, and git.
    lrwxrwxrwx 1 ubuntu ubuntu        27 Feb  7 09:29 family -> /home/ubuntu/private/family/
    #+end_example
 
-* Side Effects
-** Enables time tracking on projects  
-* Execution
-* What this does not address
-  - Archival of non-project related material such as photos, videos
-    and music.
-  - Archival of old word processing docs, spreadsheets, etc.
+* Progress
+  See [[file:project-metaproject.org]] for work-in-progress action items.
+* Future Work
+** Incorporate old project material into this system
+   - e.g. older school projects, resumes, etc.
 
-* Action Items
-** TODO Think about renaming THIS file and categorizing it in the new system
-** TODO Check this meta-project into github
-** TODO Start re-organizing all my projects/git repos along these lines
+
