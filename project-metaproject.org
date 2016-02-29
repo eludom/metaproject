@@ -1,22 +1,23 @@
-* Action Items - Metaproject
-** DONE Rename THIS file and categorize it in the new system
-   SCHEDULED: <2016-02-27 Sat>
+* Info and Planning - Metaproject				:cogita:OODa:
 ** DONE Write up project description
    [2016-02-28 Sun]
    [[file:README.org]]
-** IN-PROGRESS Check this meta-project into github
+* Backlog - Metaproject						   :fac:oodA:
+* Action Items - Metaproject					   :fac:oodA:
+** DONE Rename THIS file and categorize it in the new system
+   SCHEDULED: <2016-02-27 Sat>
+** TODO select git repos
+   :LOGBOOK:
+   CLOCK: [2016-02-27 Sat 06:16]--[2016-02-27 Sat 06:16] =>  0:00
+   :END:
+   [2016-02-27 Sat 06:16]
+   [[file:~/projects][file:~/projects]]
 ** TODO Start re-organizing all my projects/git repos along these lines
 ** IN-PROGRESS Migrate ~/projects and ~/git projects to new format as I touch files
    :LOGBOOK:
    CLOCK: [2016-02-27 Sat 06:15]--[2016-02-27 Sat 06:15] =>  0:00
    :END:
    [2016-02-27 Sat 06:15]
-   [[file:~/projects][file:~/projects]]
-** TODO select git repos
-   :LOGBOOK:
-   CLOCK: [2016-02-27 Sat 06:16]--[2016-02-27 Sat 06:16] =>  0:00
-   :END:
-   [2016-02-27 Sat 06:16]
    [[file:~/projects][file:~/projects]]
 ** TODO start syncing incrementally to new git repos
    :LOGBOOK:
@@ -30,8 +31,7 @@
    :END:
    [2016-02-27 Sat 06:16]
    [[file:~/projects][file:~/projects]]
-** TODO figure out what to to do with ~/secrets and ~/configs
+** TODO figure out what to to do with ~/secrets and ~/configs	       :oodA:
 
-* Backlog - Metaproject
-* Meetings - Metaproject
-* Info - Metaproject
+* Communication - Metaproject					   :dic:Ooda:
+** IN-PROGRESS Check this meta-project into github
