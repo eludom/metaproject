@@ -1,10 +1,10 @@
 #+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:nil arch:headline
 #+OPTIONS: author:t broken-links:nil c:nil creator:nil
 #+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t
-#+OPTIONS: num:nil p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
-#+OPTIONS: timestamp:t title:t toc:nil todo:t |:t
-#+TITLE: George Jones Projects Metaproject
-#+DATE: <2016-02-28 09:14:31 Sunday>
+#+OPTIONS: num:2 p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+TITLE: George Jones' Projects Metaproject
+#+DATE: <2016-02-29 04:50:28 Monday>
 #+AUTHOR: George M Jones
 #+EMAIL: gmj@pobox.com
 #+LANGUAGE: en
@@ -121,6 +121,47 @@ using org mode/agenda, and git.
    ~/home/private/family/thing1/person-thing1.org # not project-thing1.org !!!
    #+end_example
 
+** Describe purpose of each heading in project-*.org template
+   This describes the general intent of the pieces of my default
+   project template.
+
+   In general, the phases are in order (e.g. planning comes before
+   action items which comes before reporting)
+
+   I loosely organize things around the motto "Cogita, Fac, Dic"
+   (Think, Do, Speak).  Things should be done in that order.  The
+   "Speak" part is telling people what you've done.
+
+   I am experimenting with also organizing via the "OODA Loop"
+   (Observe, Orient, Decide, Act).
+   
+*** Info and Planning
+    - Planning info (including meeting notes, project plans, research,
+      links, etc) goes here
+*** Action Items
+    - These action items.  In my system, action items can be in any of
+      the following states:
+
+      #+begin_example
+      (setq org-todo-keywords '((sequence "TODO" "IN-PROGRESS"  "|" "DONE" "WAITING" "DELEGATED" "CANCELED")))
+      #+end_example
+
+    - Action Items can have a deadline or a scheduled time/date.  I
+      follow the org-mode meaning of those term:
+
+      + DEADLINE :: Meaning: the task (most likely a TODO item, though
+           not necessarily) is supposed to be finished on that date.
+
+      + SCHEDULED :: Meaning: you are planning to start working on
+           that task on the given date. 
+
+    - Items that are neither scheduled nor have a deadline are the *BACKLOG*.
+
+*** Reporting
+    - These are items that report the results of the project or action
+      items. These can be reports, emails, meetings, conversations,
+      wiki updates, etc.
+    
 ** Add the {person,project}-PROJECTNAME.org to org-agenda-files
    #+begin_example
    C-c [ runs the command org-agenda-file-to-front (found in
