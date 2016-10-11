@@ -4,7 +4,7 @@
 #+OPTIONS: num:nil p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
 #+OPTIONS: timestamp:t title:t toc:nil todo:t |:t
 #+TITLE: Metaproject Project
-#+DATE: <2016-02-29 05:01:34 Monday>
+#+DATE: <2016-08-30 09:50:03 Tuesday>
 #+AUTHOR: George M Jones
 #+EMAIL: gmj@pobox.com
 #+LANGUAGE: en
@@ -12,7 +12,8 @@
 #+EXCLUDE_TAGS: noexport
 #+CREATOR: Emacs 25.1.50.1 (Org mode 8.3.4)
 
-* Info and Planning - Metaproject 				:cogita:OODa:
+* metaproject - project info
+* metaproject - info and planning
 ** DONE Write up project description
    [2016-02-28 Sun]
    [[file:README.org]]
@@ -21,7 +22,7 @@
      access control.
 ** Experiment with tags
    - [X] Are tags inherited ? YES
-   - [X] Are tags case sensitive? NO
+   - [X] Are tags case sensitive? YES
    - [ ] "cogita,fac,dic" for my way of working
    - [ ] Do my projects fit OODA loop
 ** Experiment with order of top level headlines
@@ -31,37 +32,68 @@
      email, conversations, etc.   Which would mean meetings for
      planning could fall under "Info and Plannning"
    
-* Action Items - Metaproject					   :fac:oodA:
+* metaproject - action items
 ** DONE Rename THIS file and categorize it in the new system
    SCHEDULED: <2016-02-27 Sat>
-** IN-PROGRESS select git repos
+** [3/3] IN-PROGRESS select git repos
    :LOGBOOK:
    CLOCK: [2016-02-27 Sat 06:16]--[2016-02-27 Sat 06:16] =>  0:00
    :END:
    [2016-02-27 Sat 06:16]
-   [[file:~/projects][file:~/projects]]
-** TODO Start re-organizing all my projects/git repos along these lines
-** IN-PROGRESS Migrate ~/projects and ~/git projects to new format as I touch files
+   - [X] choose secret repo
+   - [X] choose private repo
+   - [X] choose public repo : github/eludom
+
+** DONE Start re-organizing all my projects/git repos along these lines
+** DONE Migrate ~/projects and ~/git projects to new format as I touch files
    :LOGBOOK:
    CLOCK: [2016-02-27 Sat 06:15]--[2016-02-27 Sat 06:15] =>  0:00
    :END:
    [2016-02-27 Sat 06:15]
    [[file:~/projects][file:~/projects]]
-** TODO start syncing incrementally to new git repos
+** DONE figure out which repos I am activly using
+   #+begin_example
+   find ~ -type d -mtime -180 -name .git
+   #+end_example
+** DONE figure out which repos I am not activly using, archive somehow?
+   #+begin_example
+   find ~ -type d -mtime +179 -name .git
+   #+end_example
+
+** DONE start syncing incrementally to new git repos
    :LOGBOOK:
    CLOCK: [2016-02-27 Sat 07:17]--[2016-02-27 Sat 07:17] =>  0:00
    :END:
    [2016-02-27 Sat 07:17]
    [[file:~/home/private/.ssh/install.sh][file:~/home/private/.ssh/install.sh]]
-** TODO sync everything with my org dashboard
+** IN-PROGRESS sync everything with my org dashboard
    :LOGBOOK:
    CLOCK: [2016-02-27 Sat 06:16]--[2016-02-27 Sat 06:16] =>  0:00
    :END:
    [2016-02-27 Sat 06:16]
    [[file:~/projects][file:~/projects]]
-** TODO figure out what to to do with ~/secrets and ~/configs	       :oodA:
+** DONE figure out what to to do with ~/secrets and ~/configs	       :oodA:
+   - sync to codecommit
+   - CAVEAT:  code-commit has a single top level namespace within an account,
+   hence if I use the same AWS account for both secrets and private I
+   will have to deconflict repository names by hand.  Since github is
+   a differetn namespace, I can have the same repo name there and in
+   secret or private (e.g. "org-git-dashboard" in both)
 
-* Reporting - Metaproject 				    :dic:Ooda:footag:
+
+** IN-PROGRESS Create projects file to be my emacs "homepage"
+   :LOGBOOK:
+   CLOCK: [2016-08-30 Tue 09:31]--[2016-08-30 Tue 09:31] =>  0:00
+   :END:
+   [2016-08-30 Tue 09:31]
+   [[file:~/home/private/Org/projects.org::*Earlier%20thoughts][Earlier thoughts]]
+** TODO Autogenerate projects lists from org-agenda-files variable
+   :LOGBOOK:
+   CLOCK: [2016-08-30 Tue 09:32]--[2016-08-30 Tue 09:33] =>  0:01
+   :END:
+   [2016-08-30 Tue 09:32]
+   [[file:~/home/private/Org/projects.org::*Projects][Projects]]
+* metaproject - reporting
 ** DONE Check this meta-project into github
 
 
